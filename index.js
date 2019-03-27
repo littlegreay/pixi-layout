@@ -94,3 +94,4 @@ class Layout extends PIXI.Container {
 }
 
 PIXI.extras.Layout = Layout
+

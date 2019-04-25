@@ -47,7 +47,6 @@ class Layout extends PIXI.Container {
 
           child.y = i ? this.gap + ty + ah + ph : ah + ph
           ty = child.y + height - (ah + ph)
-          console.log(child.y)
         })
         break
       }

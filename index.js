@@ -11,7 +11,7 @@ class Layout extends PIXI.Container {
 
   constructor(opt={}) {
     super()
-    this.col = opt.col == null ? 3 : opt.col,
+    this.col = opt.col == null ? 3 : opt.col
     this.type = opt.type == null ? Layout.HORIZONTAL : opt.type
     this.gap = opt.gap || 0
     this.#listen()

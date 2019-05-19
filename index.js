@@ -1,7 +1,3 @@
-/**
- * TIP: 尽量将子元素的增减操作放在 container 添加到舞台前
- */
-
 class Layout extends PIXI.Container {
   static GRID = 2
   static VERTICAL = 1
@@ -9,7 +5,7 @@ class Layout extends PIXI.Container {
 
   #added = false
 
-  constructor(opt={}) {
+  constructor(opt = {}) {
     super()
     this.col = opt.col == null ? 3 : opt.col,
     this.type = opt.type == null ? Layout.HORIZONTAL : opt.type
@@ -84,14 +80,16 @@ class Layout extends PIXI.Container {
   }
 
   #listen() {
-    this.on('added', () => {
-      this.#added = true
-      this.render()
-    }).on('removed', () => {
-      this.#added = false
-    })
+    this
+      .on('added', () => {
+        this.#added = true
+        this.render()
+      })
+      .on('removed', () => {
+        this.#added = false
+      })
   }
 }
 
-PIXI.extras.Layout = Layout
+PIXI.Layout = Layout
 

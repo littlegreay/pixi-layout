@@ -13,7 +13,7 @@ class Layout extends PIXI.Container {
     this.#listen()
   }
 
-  render() {
+  #render() {
     switch (this.type) {
       case Layout.HORIZONTAL: {
         let tx = 0
@@ -76,14 +76,14 @@ class Layout extends PIXI.Container {
   }
 
   onChildrenChange() {
-    this.#added && this.render()
+    this.#added && this.#render()
   }
 
   #listen() {
     this
       .on('added', () => {
         this.#added = true
-        this.render()
+        this.#render()
       })
       .on('removed', () => {
         this.#added = false
